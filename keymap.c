@@ -86,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_OTHER] = LAYOUT(
                  KC_F1,         KC_F2,     KC_F3,    KC_F4,     KC_F5,   KC_F6,                               KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, KC_F12,
-      KC_ENTER,  LCTL(KC_ENT),  EN_MACR,   EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  UA_JI,  UA_S_JI,  KC_DEL,
-                 SGUI(KC_SPC),  EN_FISH,   EN_LT,    AG_LPRN,   AG_RPRN, EN_GT,                               KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, UA_I,   UA_S_I,
+      KC_ENTER,  SGUI(KC_ENT),  EN_MACR,   EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  UA_JI,  UA_S_JI,  KC_DEL,
+                 LGUI(KC_ENT),  EN_FISH,   EN_LT,    AG_LPRN,   AG_RPRN, EN_GT,                               KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, UA_I,   UA_S_I,
                  LA_SYNC,       EN_LAMB,   EN_GTEQ,  EN_LBRC,   EN_RBRC, EN_ARR1,                 /* FIXME */ UA_S_JE, UA_JE,   UA_GE,   UA_S_GE, RU_JO,  RU_S_JO,
                                                                 KC_LSFT, KC_SPC, LCTL_T(KC_TAB),     RESET,  KC_BSPC, KC_NO
   ),
