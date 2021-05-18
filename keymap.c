@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_UA] = LAYOUT(
                           KC_ESC,  EN_QUOT, AG_DQUO, UA_NUME, EN_DLR,  AG_PERC,                                        AG_COLN, EN_AMPR, AG_ASTR, AG_MINS,  AG_PLUS,  AG_QUES,
-           LA_CHNG,       TL_UA_EN,UA_J,    UA_TS,   UA_U,    UA_K,    UA_E,                                           UA_N,    UA_G,    UA_SH,   UA_SC,    UA_Z,     UA_H,     AG_SLSH,
+           LA_CHNG,       TL_UA_EN,UA_J,    UA_TS,   UA_U,    UA_K,    UA_E,                                           UA_N,    UA_G,    UA_SH,   UA_SC,    UA_Z,     UA_H,     EN_SLSH,
                           AWSM_T,  UA_F,    UA_I,    UA_V,    UA_A,    UA_P,                                           UA_R,    UA_O,    UA_L,    UA_D,     UA_ZH,    UA_JE,
                           KC_LALT, UA_JA,   UA_CH,   UA_S,    UA_M,    UA_Y,                                           UA_T,    UA_SF,   UA_B,    UA_JU,    AG_DOT,   AG_COMM,
                                                               SFT_N,   KC_SPC,   LCTL_T(KC_TAB),       LT(L_NUKE_WAR, KC_ENT),  KC_BSPC, MO(L_OTHER)
@@ -84,9 +84,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_UA_S] = LAYOUT(
                           EN_TILD, UA_1,    UA_2 ,   UA_3,    UA_4,    UA_5,                                           UA_6,    UA_7,    UA_8,    UA_9,     UA_0,     EN_PIPE,
-           LA_CHNG,       TL_UA_EN,UA_S_J,  UA_S_TS, UA_S_U,  UA_S_K,  UA_S_E,                                         UA_S_N,  UA_S_G,  UA_S_SH, UA_S_SC,  UA_S_Z,   UA_S_H,   AG_BSLS,
+           LA_CHNG,       TL_UA_EN,UA_S_J,  UA_S_TS, UA_S_U,  UA_S_K,  UA_S_E,                                         UA_S_N,  UA_S_G,  UA_S_SH, UA_S_SC,  UA_S_Z,   UA_S_H,   EN_BSLS,
                           KC_LGUI, UA_S_F,  UA_S_I,  UA_S_V,  UA_S_A,  UA_S_P,                                         UA_S_R,  UA_S_O,  UA_S_L,  UA_S_D,   UA_S_ZH,  UA_S_JE,
-                          KC_ENT,  UA_S_JA, UA_S_CH, UA_S_S,  UA_S_M,  UA_S_I,                                         UA_S_T,  UA_S_SF, UA_S_B,  UA_S_JU,  AG_EXCL,  EN_CIRC,
+                          KC_ENT,  UA_S_JA, UA_S_CH, UA_S_S,  UA_S_M,  UA_S_Y,                                         UA_S_T,  UA_S_SF, UA_S_B,  UA_S_JU,  AG_EXCL,  EN_CIRC,
                                                               _______, KC_SPC,   LCTL_T(KC_TAB),       LT(L_NUKE_WAR, KC_ENT),  KC_BSPC, MO(L_OTHER)
   ),
 
