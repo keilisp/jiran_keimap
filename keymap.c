@@ -31,6 +31,18 @@ enum LANG_CHANGE {
 
 enum custom_keycodes {
   PLACEHOLDER = CUSTOM_SAFE_RANGE,
+  KC_LMBD,
+  KC_RQUES,
+  KC_PI,
+  KC_PSI,
+  KC_OMEG,
+  KC_TBFL,
+  KC_DSPR,
+  KC_IDK,
+  KC_TROL,
+  KC_BRUH,
+  KC_CLWN,
+  KC_KISS,
 
 };
 
@@ -100,9 +112,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_NUKE_WAR] = LAYOUT(
                 KC_ESC,         KC_SLCK,   KC_CAPS,  KC_INSERT, KC_PAUSE,KC_PSCR,                             KC_NO,   KC_PSLS, KC_P7,   KC_P8,   KC_P9,  KC_PMNS,
-      KC_MENU,  KC_NO,          KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                               KC_NO,   KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,  KC_NLCK,
-                KC_LSFT,        KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                               KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
-                KC_LCTL,        KC_LGUI,   KC_LALT,  KC_RALT,   KC_RGUI, KC_NO,                               KC_NO,   KC_NO,   KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
+      KC_MENU,  KC_LGUI,        KC_LMBD,   KC_RQUES, KC_PI,     KC_PSI,  KC_OMEG,                             KC_NO,   KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,  KC_NLCK,
+                KC_LSFT,        KC_TBFL,   KC_DSPR,  KC_IDK,    KC_TROL, KC_BRUH,                             KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
+                KC_LCTL,        KC_LALT,   KC_RALT,  KC_RGUI,   KC_CLWN, KC_KISS,                             KC_NO,   KC_NO,   KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
                                                                 KC_RSFT, KC_SPC, KC_RCTL,            KC_NO,   KC_BSPC, MO(L_OTHER)
   ),
 
@@ -111,24 +123,84 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,   _______, KC_Q,    KC_W,  KC_E,  KC_R,    KC_T,                                       KC_Y,  KC_U,  KC_I,    KC_O,   KC_P,    _______,  _______,
                       _______, KC_A,    KC_S,  KC_D,  KC_F,    KC_G,                                       KC_H,  KC_J,  KC_K,    KC_L,   _______, _______,
                       _______, KC_Z,    KC_X,  KC_C,  KC_V,    KC_B,                                       KC_N,  KC_M,  KC_COMM, KC_DOT, _______,  _______,
-                                                              KC_LSHIFT,   _______, _______,       _______,  _______, _______
+                                                               KC_LSHIFT, _______, _______,      _______,  _______, _______
   ),
 
 };
 
 //-----------------------------------------------------------------------------
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!lang_shift_process_record(keycode, record)) {
-        return false;
-    }
+  if (!lang_shift_process_record(keycode, record)) {
+    return false;
+  }
 
-    if (!process_my_lang_keys(keycode, record)) {
-        return false;
-    }
+  if (!process_my_lang_keys(keycode, record)) {
+    return false;
+  }
 
-    switch (keycode) {
+  switch (keycode) {
+  case KC_LMBD:
+    if (record->event.pressed) {
+      send_unicode_string("𝜆");
     }
     return true;
+  case KC_RQUES:
+    if (record->event.pressed) {
+      send_unicode_string("¿");
+    }
+    return true;
+  case KC_PI:
+    if (record->event.pressed) {
+      send_unicode_string("𝜋");
+    }
+    return true;
+  case KC_PSI:
+    if (record->event.pressed) {
+      send_unicode_string("𝝍");
+    }
+    return true;
+  case KC_OMEG:
+    if (record->event.pressed) {
+      send_unicode_string("ꭥ");
+    }
+    return true;
+  case KC_TBFL:
+    if (record->event.pressed) {
+      send_unicode_string("(ノಠ益ಠ)ノ彡┻━┻");
+    }
+    return true;
+  case KC_DSPR:
+    if (record->event.pressed) {
+      send_unicode_string("ಠ_ಠ");
+    }
+    return true;
+  case KC_IDK:
+    if (record->event.pressed) {
+      send_unicode_string("¯\\_(ツ)_/¯");
+    }
+    return true;
+  case KC_TROL:
+    if (record->event.pressed) {
+      send_unicode_string("( ͡° ͜ʖ ͡°)");
+    }
+    return true;
+  case KC_BRUH:
+    if (record->event.pressed) {
+      send_unicode_string("(T_T)");
+    }
+    return true;
+  case KC_CLWN:
+    if (record->event.pressed) {
+      send_unicode_string("🤡");
+    }
+    return true;
+  case KC_KISS:
+    if (record->event.pressed) {
+      send_unicode_string("😘");
+    }
+    return true;
+  }
+  return true;
 }
 
 void user_timer(void) { lang_shift_user_timer(); }
