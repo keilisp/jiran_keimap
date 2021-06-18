@@ -13,7 +13,9 @@ enum custom_lang_keycodes {
     EN_ARR2,  // =>
     EN_FISH,  // ::<>()◀️◀️◀️
     EN_MACR,  // #[]◀️
-    EN_LAMB,  // (lambda ())◀◀
+    EN_CLLB,  // (lambda () )◀◀◀
+    EN_CJLB,  // (fn [] )◀◀◀
+    EN_CJSLB,  // #()◀◀
     EN_CLTG,  // </
     AG2COLN,  // ::
     AG2SLSH,  // //⎵
@@ -92,7 +94,7 @@ bool process_my_lang_keys(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case EN_LAMB:
+        case EN_CLLB:
             if (record->event.pressed) {
                 lang_shift_tap_key(EN_LPRN);
                 lang_shift_tap_key(EN_L);
@@ -105,9 +107,56 @@ bool process_my_lang_keys(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_SPC);
                 lang_shift_tap_key(EN_LPRN);
                 lang_shift_tap_key(EN_RPRN);
+                register_code(KC_SPC);
+                unregister_code(KC_SPC);
+                lang_shift_tap_key(EN_LPRN);
+                lang_shift_tap_key(EN_RPRN);
                 lang_shift_tap_key(EN_RPRN);
                 register_code(KC_LEFT);
                 unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+            }
+            return false;
+            break;
+        case EN_CJLB:
+            if (record->event.pressed) {
+                lang_shift_tap_key(EN_LPRN);
+                lang_shift_tap_key(EN_F);
+                lang_shift_tap_key(EN_N);
+                register_code(KC_SPC);
+                unregister_code(KC_SPC);
+                lang_shift_tap_key(EN_LBRC);
+                lang_shift_tap_key(EN_RBRC);
+                register_code(KC_SPC);
+                unregister_code(KC_SPC);
+                lang_shift_tap_key(EN_LPRN);
+                lang_shift_tap_key(EN_RPRN);
+                lang_shift_tap_key(EN_RPRN);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+            }
+            return false;
+            break;
+        case EN_CJSLB:
+            if (record->event.pressed) {
+                lang_shift_tap_key(EN_HASH);
+                lang_shift_tap_key(EN_LPRN);
+                lang_shift_tap_key(EN_RPRN);
                 register_code(KC_LEFT);
                 unregister_code(KC_LEFT);
             }

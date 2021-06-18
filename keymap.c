@@ -104,9 +104,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_OTHER] = LAYOUT(
                  KC_F1,         KC_F2,     KC_F3,    KC_F4,     KC_F5,   KC_F6,                               KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, KC_F12,
-      LA_SYNC,   LCTL(KC_ENT),  EN_MACR,   EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  UA_JI,  UA_S_JI,  KC_DEL,
-                 KC_LGUI,       EN_FISH,   EN_LT,    AG_LPRN,   AG_RPRN, EN_GT,                               KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, UA_JE,  UA_S_JE,
-                 SGUI(KC_ENT),  EN_LAMB,   EN_GTEQ,  EN_LBRC,   EN_RBRC, EN_ARR1,                             UA_S_I,  UA_I,    UA_GE,   UA_S_GE,   RU_JO,  RU_S_JO,
+      LA_SYNC,   LCTL(KC_ENT),  EN_CJSLB,  EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  UA_JI,  UA_S_JI,  KC_DEL,
+                 KC_LGUI,       EN_CJLB,   EN_LT,    AG_LPRN,   AG_RPRN, EN_GT,                               KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, UA_JE,  UA_S_JE,
+                 SGUI(KC_ENT),  EN_CLLB,   EN_GTEQ,  EN_LBRC,   EN_RBRC, EN_ARR1,                             UA_S_I,  UA_I,    UA_GE,   UA_S_GE,   RU_JO,  RU_S_JO,
                                                                 KC_LSFT, KC_SPC, LCTL_T(KC_TAB),     RESET,  KC_BSPC, KC_NO
   ),
 
@@ -127,6 +127,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 };
+
+// TODO [[https://github.com/klavarog/arbitrary_keycode/][arbitrary_keycode]]
+
+/* #include QMK_KEYBOARD_H */
+/* enum custom_keycodes { */
+/*   MY_HASH = SAFE_RANGE */
+/* }; */
+/* const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { */
+/*   [0] = LAYOUT( /\* Base *\/ */
+/*     MY_HASH \ */
+/*   ), */
+/* }; */
+/* bool process_record_user(uint16_t keycode, keyrecord_t *record) { */
+/*   static uint16_t my_hash_timer; */
+/*   switch (keycode) { */
+/*     case MY_HASH: */
+/*       if(record->event.pressed) { */
+/*         my_hash_timer = timer_read(); */
+/*         register_code(KC_LCTL); // Change the key to be held here */
+/*       } else { */
+/*         unregister_code(KC_LCTL); // Change the key that was held here, too! */
+/*         if (timer_elapsed(my_hash_timer) < TAPPING_TERM) { */
+/*           SEND_STRING("#"); // Change the character(s) to be sent on tap here */
+/*         } */
+/*       } */
+/*       return false; // We handled this keypress */
+/*   } */
+/*   return true; // We didn't handle other keypresses */
+/* } */
 
 //-----------------------------------------------------------------------------
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
