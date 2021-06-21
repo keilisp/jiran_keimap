@@ -98,11 +98,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [L_NUKE_WAR] = LAYOUT(
-                KC_ESC,         KC_SLCK,   KC_CAPS,  KC_INSERT, KC_PAUSE,KC_PSCR,                                      KC_NO,   KC_PSLS, KC_P7,   KC_P8,   KC_P9,  KC_PMNS,
-      KC_MENU,  KC_LGUI,        KC_LMBD,   KC_RQUES, KC_PI,     KC_PSI,  KC_OMEG,                                      KC_NO,   KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,  KC_NLCK,
-                KC_LSFT,        KC_TBFL,   KC_DSPR,  KC_IDK,    KC_TROL, KC_BRUH,                                      KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
-                KC_LCTL,        KC_LALT,   KC_RALT,  KC_RGUI,   KC_CLWN, KC_KISS,                                      KC_NO,   KC_NO,   KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
-                                                                KC_RSFT, KC_SPC, KC_RCTL,                     KC_NO,   KC_BSPC, MO(L_OTHER)
+                KC_ESC,         KC_SLCK,   KC_CAPS,  KC_INSERT, KC_PAUSE,KC_PSCR,                                     KC_NO,   KC_PSLS, KC_P7,   KC_P8,   KC_P9,  KC_PMNS,
+      KC_MENU,  KC_LGUI,        KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                                       KC_NO,   KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,  KC_NLCK,
+                KC_LSFT,        KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                                       KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
+                KC_LCTL,        KC_LALT,   KC_RALT,  KC_RGUI,   KC_NO,   KC_NO,                                       KC_NO,   KC_NO,   KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
+                                                                KC_RSFT, KC_SPC, KC_RCTL,                     KC_NO,  KC_BSPC, MO(L_OTHER)
   ),
 
   [L_AWSM] = LAYOUT(
@@ -115,47 +115,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-// TODO [[https://github.com/klavarog/arbitrary_keycode/][arbitrary_keycode]]
-
-/* #include QMK_KEYBOARD_H */
-/* enum custom_keycodes { */
-/*   MY_HASH = SAFE_RANGE */
-/* }; */
-/* const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { */
-/*   [0] = LAYOUT( /\* Base *\/ */
-/*     MY_HASH \ */
-/*   ), */
-/* }; */
-/* bool process_record_user(uint16_t keycode, keyrecord_t *record) { */
-/*   static uint16_t my_hash_timer; */
-/*   switch (keycode) { */
-/*     case MY_HASH: */
-/*       if(record->event.pressed) { */
-/*         my_hash_timer = timer_read(); */
-/*         register_code(KC_LCTL); // Change the key to be held here */
-/*       } else { */
-/*         unregister_code(KC_LCTL); // Change the key that was held here, too! */
-/*         if (timer_elapsed(my_hash_timer) < TAPPING_TERM) { */
-/*           SEND_STRING("#"); // Change the character(s) to be sent on tap here */
-/*         } */
-/*       } */
-/*       return false; // We handled this keypress */
-/*   } */
-/*   return true; // We didn't handle other keypresses */
-/* } */
-
-//-----------------------------------------------------------------------------
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (!lang_shift_process_record(keycode, record)) {
-    return false;
-  }
+    if (!lang_shift_process_record(keycode, record)) {
+        return false;
+    }
 
-  if (!process_my_lang_keys(keycode, record)) {
-    return false;
-  }
+    if (!process_my_lang_keys(keycode, record)) {
+        return false;
+    }
 
-  switch (keycode) {
-  return true;
+    /* switch (keycode) {} */
+    return true;
 }
 
 void user_timer(void) { lang_shift_user_timer(); }
