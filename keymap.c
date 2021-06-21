@@ -43,7 +43,6 @@ enum custom_keycodes {
   KC_BRUH,
   KC_CLWN,
   KC_KISS,
-
 };
 
 /* TODO:

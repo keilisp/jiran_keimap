@@ -13,8 +13,8 @@ enum custom_lang_keycodes {
     EN_ARR2,  // =>
     EN_FISH,  // ::<>()◀️◀️◀️
     EN_MACR,  // #[]◀️
-    EN_CLLB,  // (lambda () )◀◀◀
-    EN_CJLB,  // (fn [] )◀◀◀
+    EN_CLLB,  // (lambda ())◀◀◀◀◀
+    EN_CJLB,  // (fn [] ())◀◀◀◀◀
     EN_CJSLB,  // #()◀◀
     EN_CLTG,  // </
     AG2COLN,  // ::
