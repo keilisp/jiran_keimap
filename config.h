@@ -20,5 +20,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define USE_I2C
 #define EE_HANDS
 
-#define UNICODE_SELECTED_MODES UC_LNX
 #define LANG_CHANGE_DEFAULT LANG_CHANGE_CAPS

@@ -5,8 +5,6 @@
 
 #include "custom_lang.h"
 
-#define UNICODE_SELECTED_MODES UC_LNX
-
 enum jiran_layers {
  L_EN = 0,
  L_EN_S,
@@ -33,18 +31,6 @@ enum LANG_CHANGE {
 
 enum custom_keycodes {
   PLACEHOLDER = CUSTOM_SAFE_RANGE,
-  KC_LMBD,
-  KC_RQUES,
-  KC_PI,
-  KC_PSI,
-  KC_OMEG,
-  KC_TBFL,
-  KC_DSPR,
-  KC_IDK,
-  KC_TROL,
-  KC_BRUH,
-  KC_CLWN,
-  KC_KISS,
 };
 
 /* TODO:
@@ -169,67 +155,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 
   switch (keycode) {
-  case KC_LMBD:
-    if (record->event.pressed) {
-      send_unicode_string("𝜆");
-    }
-    return true;
-  case KC_RQUES:
-    if (record->event.pressed) {
-      send_unicode_string("¿");
-    }
-    return true;
-  case KC_PI:
-    if (record->event.pressed) {
-      send_unicode_string("𝜋");
-    }
-    return true;
-  case KC_PSI:
-    if (record->event.pressed) {
-      send_unicode_string("𝝍");
-    }
-    return true;
-  case KC_OMEG:
-    if (record->event.pressed) {
-      send_unicode_string("ꭥ");
-    }
-    return true;
-  case KC_TBFL:
-    if (record->event.pressed) {
-      send_unicode_string("(ノಠ益ಠ)ノ彡┻━┻");
-    }
-    return true;
-  case KC_DSPR:
-    if (record->event.pressed) {
-      send_unicode_string("ಠ_ಠ");
-    }
-    return true;
-  case KC_IDK:
-    if (record->event.pressed) {
-      send_unicode_string("¯\\_(ツ)_/¯");
-    }
-    return true;
-  case KC_TROL:
-    if (record->event.pressed) {
-      send_unicode_string("( ͡° ͜ʖ ͡°)");
-    }
-    return true;
-  case KC_BRUH:
-    if (record->event.pressed) {
-      send_unicode_string("(T_T)");
-    }
-    return true;
-  case KC_CLWN:
-    if (record->event.pressed) {
-      send_unicode_string("🤡");
-    }
-    return true;
-  case KC_KISS:
-    if (record->event.pressed) {
-      send_unicode_string("😘");
-    }
-    return true;
-  }
   return true;
 }
 
