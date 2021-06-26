@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  EN_Q,    EN_W,    EN_E,    EN_R,      EN_T,                                         EN_Y,    EN_U,    EN_I,    EN_O,     EN_P,     EN_GRV,   AG_SLSH,
                           AWSM_T,  EN_A,    EN_S,    EN_D,    EN_F,      EN_G,                                         EN_H,    EN_J,    EN_K,    EN_L,     AG_SCLN,  EN_AT,
                           KC_LALT, EN_Z,    EN_X,    EN_C,    EN_V,      EN_B,                                         EN_N,    EN_M,    AG_EQL,  AG_UNDS,  AG_DOT,   AG_COMM,
-                                                              SFTO,      KC_SPC, CTRL_0,                    NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
+                                                              SFT_N,     KC_SPC, CTRL_0,                    NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
   ),
 
   [L_EN_S] = LAYOUT(
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  RU_J,    RU_TS,   RU_U,    RU_K,    RU_JE,                                          RU_N,    RU_G,    RU_SH,   RU_SC,    RU_Z,     RU_H,     AG_SLSH,
                           AWSM_T,  RU_F,    RU_Y,    RU_V,    RU_A,    RU_P,                                           RU_R,    RU_O,    RU_L,    RU_D,     RU_ZH,    RU_E,
                           KC_LALT, RU_JA,   RU_CH,   RU_S,    RU_M,    RU_I,                                           RU_T,    RU_SF,   RU_B,    RU_JU,    AG_DOT,   AG_COMM,
-                                                              SFTO,    KC_SPC,   CTRL_0,                    NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
+                                                              SFT_N,   KC_SPC,   CTRL_0,                    NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
   ),
   
   [L_RU_S] = LAYOUT(
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  UA_J,    UA_TS,   UA_U,    UA_K,    UA_E,                                           UA_N,    UA_G,    UA_SH,   UA_SC,    UA_Z,     UA_H,     EN_SLSH,
                           AWSM_T,  UA_F,    UA_I,    UA_V,    UA_A,    UA_P,                                           UA_R,    UA_O,    UA_L,    UA_D,     UA_ZH,    UA_JE,
                           KC_LALT, UA_JA,   UA_CH,   UA_S,    UA_M,    UA_Y,                                           UA_T,    UA_SF,   UA_B,    UA_JU,    AG_DOT,   AG_COMM,
-                                                              SFTO,    KC_SPC,   CTRL_0,                    NUKE_ENT,  UAEN_BSP,MO(L_OTHER)
+                                                              SFT_N,   KC_SPC,   CTRL_0,                    NUKE_ENT,  UAEN_BSP,MO(L_OTHER)
   ),
 
   [L_UA_S] = LAYOUT(
@@ -150,7 +150,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       } else {
         press_arbitrary_keycode(SFT_N, false);
         if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
-          shift_once_use_to_next_key(lang_get_shift_layer_number());
+          /* shift_once_use_to_next_key(lang_get_shift_layer_number()); */
+          press_arbitrary_keycode(SFT_N_O);
         }
       }
       return false; 
