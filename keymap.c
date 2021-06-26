@@ -151,7 +151,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         press_arbitrary_keycode(SFT_N, false);
         if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
           /* shift_once_use_to_next_key(lang_get_shift_layer_number()); */
-          press_arbitrary_keycode(SFT_N_O);
+          press_arbitrary_keycode(SFT_N_O, true);
+          press_arbitrary_keycode(SFT_N_O, false);
         }
       }
       return false; 
