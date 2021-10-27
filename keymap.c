@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  EN_Q,    EN_W,    EN_E,    EN_R,      EN_T,                                         EN_Y,    EN_U,    EN_I,    EN_O,     EN_P,     EN_GRV,   AG_SLSH,
                           AWSM_T,  EN_A,    EN_S,    EN_D,    EN_F,      EN_G,                                         EN_H,    EN_J,    EN_K,    EN_L,     AG_SCLN,  EN_AT,
                           KC_LALT, EN_Z,    EN_X,    EN_C,    EN_V,      EN_B,                                         EN_N,    EN_M,    AG_EQL,  AG_UNDS,  AG_DOT,   AG_COMM,
-                                                              SFT_N,     KC_SPC, CTRL_0,                    NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
+                                                              SFT_N,     KC_SPC, KC_LCTL,                   NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
   ),
 
   [L_EN_S] = LAYOUT(
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  EN_S_Q,  EN_S_W,  EN_S_E,  EN_S_R,    EN_S_T,                                       EN_S_Y,  EN_S_U,  EN_S_I,  EN_S_O,   EN_S_P,   _______,  AG_BSLS,
                           KC_LGUI, EN_S_A,  EN_S_S,  EN_S_D,  EN_S_F,    EN_S_G,                                       EN_S_H,  EN_S_J,  EN_S_K,  EN_S_L,   _______,  _______,
                           KC_LALT, EN_S_Z,  EN_S_X,  EN_S_C,  EN_S_V,    EN_S_B,                                       EN_S_N,  EN_S_M,  _______,  _______, AG_EXCL,  EN_CIRC,
-                                                              _______,   KC_SPC, CTRL_0,                    NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
+                                                              _______,   KC_SPC, KC_LCTL,                   NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
   ),
 
   [L_RU] = LAYOUT(
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  RU_J,    RU_TS,   RU_U,    RU_K,    RU_JE,                                          RU_N,    RU_G,    RU_SH,   RU_SC,    RU_Z,     RU_H,     AG_SLSH,
                           AWSM_T,  RU_F,    RU_Y,    RU_V,    RU_A,    RU_P,                                           RU_R,    RU_O,    RU_L,    RU_D,     RU_ZH,    RU_E,
                           KC_LALT, RU_JA,   RU_CH,   RU_S,    RU_M,    RU_I,                                           RU_T,    RU_SF,   RU_B,    RU_JU,    AG_DOT,   AG_COMM,
-                                                              SFT_N,   KC_SPC,   CTRL_0,                    NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
+                                                              SFT_N,   KC_SPC,   KC_LCTL,                   NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
   ),
   
   [L_RU_S] = LAYOUT(
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  RU_S_J,  RU_S_TS, RU_S_U,  RU_S_K,  RU_S_JE,                                        RU_S_N,  RU_S_G,  RU_S_SH, RU_S_SC,  RU_S_Z,   RU_S_H,   AG_BSLS,
                           KC_LGUI, RU_S_F,  RU_S_Y,  RU_S_V,  RU_S_A,  RU_S_P,                                         RU_S_R,  RU_S_O,  RU_S_L,  RU_S_D,   RU_S_ZH,  RU_S_E,
                           KC_LALT, RU_S_JA, RU_S_CH, RU_S_S,  RU_S_M,  RU_S_I,                                         RU_S_T,  RU_S_SF, RU_S_B,  RU_S_JU,  AG_EXCL,  EN_CIRC,
-                                                              _______, KC_SPC,   CTRL_0,                    NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
+                                                              _______, KC_SPC,   KC_LCTL,                   NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
   ),
 
   [L_UA] = LAYOUT(
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  UA_J,    UA_TS,   UA_U,    UA_K,    UA_E,                                           UA_N,    UA_G,    UA_SH,   UA_SC,    UA_Z,     UA_H,     EN_SLSH,
                           AWSM_T,  UA_F,    UA_I,    UA_V,    UA_A,    UA_P,                                           UA_R,    UA_O,    UA_L,    UA_D,     UA_ZH,    UA_JE,
                           KC_LALT, UA_JA,   UA_CH,   UA_S,    UA_M,    UA_Y,                                           UA_T,    UA_SF,   UA_B,    UA_JU,    AG_DOT,   AG_COMM,
-                                                              SFT_N,   KC_SPC,   CTRL_0,                    NUKE_ENT,  UAEN_BSP,MO(L_OTHER)
+                                                              SFT_N,   KC_SPC,   KC_LCTL,                   NUKE_ENT,  UAEN_BSP,MO(L_OTHER)
   ),
 
   [L_UA_S] = LAYOUT(
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
            LA_CHNG,       KC_TAB,  UA_S_J,  UA_S_TS, UA_S_U,  UA_S_K,  UA_S_E,                                         UA_S_N,  UA_S_G,  UA_S_SH, UA_S_SC,  UA_S_Z,   UA_S_H,   EN_BSLS,
                           KC_LGUI, UA_S_F,  UA_S_I,  UA_S_V,  UA_S_A,  UA_S_P,                                         UA_S_R,  UA_S_O,  UA_S_L,  UA_S_D,   UA_S_ZH,  UA_S_JE,
                           KC_LALT, UA_S_JA, UA_S_CH, UA_S_S,  UA_S_M,  UA_S_Y,                                         UA_S_T,  UA_S_SF, UA_S_B,  UA_S_JU,  AG_EXCL,  EN_CIRC,
-                                                              _______, KC_SPC,   CTRL_0,                    NUKE_ENT,  UAEN_BSP,MO(L_OTHER)
+                                                              _______, KC_SPC,   KC_LCTL,                   NUKE_ENT,  UAEN_BSP,MO(L_OTHER)
   ),
 
   [L_OTHER] = LAYOUT(
