@@ -50,10 +50,7 @@ enum custom_keycodes {
 };
 
 /* TODO:
- * Fix UA (mb modify lang_shift src)
- * Setup arbitrary keycodes (ALT_T(LA_CHNG))
- * Set Lang_Set change on nuke layer
- * Add layers for: Emacs,  mb for unicode*/
+ * Add layers for: Emacs, unicode*/
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -107,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_OTHER] = LAYOUT(
                           KC_F1,         KC_F2,     KC_F3,    KC_F4,     KC_F5,   KC_F6,                               KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, KC_F12,
-           LA_SYNC,       SGUI(KC_ENT),  EN_CJSLB,  EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  UA_JI,  UA_S_JI,     KC_DEL,
+           LA_SYNC,       KC_PSCR,       EN_CJSLB,  EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  UA_JI,  UA_S_JI,     KC_DEL,
                           KC_LGUI,       EN_CJLB,   EN_LT,    AG_LPRN,   AG_RPRN, EN_GT,                               KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, UA_JE,  UA_S_JE,
                           KC_LALT,       EN_CLLB,   EN_GTEQ,  EN_LBRC,   EN_RBRC, EN_ARR1,                             UA_S_I,  UA_I,    UA_GE,   UA_S_GE,   RU_JO,  RU_S_JO,
                                                                          KC_LSFT, KC_SPC, KC_LCTL,          RESET,     KC_BSPC, KC_NO
@@ -115,9 +112,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_NUKE_WAR] = LAYOUT(
                           KC_ESC,         KC_SLCK,   KC_CAPS,  KC_INSERT, KC_PAUSE,KC_PSCR,                            KC_NO,   KC_PSLS, KC_P7,   KC_P8,   KC_P9,  KC_PMNS,
-           KC_MENU,       KC_LGUI,        KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                              KC_NO,   KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,     KC_NLCK,
-                          KC_LSFT,        KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
-                          KC_LCTL,        KC_LALT,   KC_RALT,  KC_RGUI,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
+           KC_MENU,       KC_TAB,         KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                              KC_NO,   KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,     KC_NLCK,
+                          KC_RGUI,        KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
+                          KC_RALT,        KC_LALT,   KC_LSFT,  KC_LGUI,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
                                                                           KC_RSFT, KC_SPC, KC_RCTL,         KC_NO,     KC_BSPC, MO(L_OTHER)
   ),
 
