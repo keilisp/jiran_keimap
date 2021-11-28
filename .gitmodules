@@ -1,3 +1,6 @@
 [submodule "lang_shift"]
 	path = lang_shift
 	url = https://github.com/keilisp/lang_shift.git
+[submodule "arbitrary_keycode"]
+	path = arbitrary_keycode
+	url = https://github.com/klavarog/arbitrary_keycode/
