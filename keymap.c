@@ -38,12 +38,6 @@ enum LANG_CHANGE {
 
 enum custom_keycodes {
   PLACEHOLDER = CUSTOM_SAFE_RANGE,
-  SFTO,
-  SFT_BSP,
-  SFT_TAB,
-  ENRU_SFO,
-  RUEN_SFO,
-  UAEN_SFO,
   ENRU_BSP,
   RUEN_BSP,
   UAEN_BSP,
@@ -56,8 +50,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_EN] = LAYOUT(
                           KC_ESC,  EN_QUOT, AG_DQUO, EN_HASH, EN_DLR,    AG_PERC,                                      AG_COLN, EN_AMPR, AG_ASTR, AG_MINS,  AG_PLUS,  AG_QUES,
-           LA_CHNG,       KC_TAB,  EN_Q,    EN_W,    EN_E,    EN_R,      EN_T,                                         EN_Y,    EN_U,    EN_I,    EN_O,     EN_P,     EN_GRV,   AG_SLSH,
-                          AWSM_T,  EN_A,    EN_S,    EN_D,    EN_F,      EN_G,                                         EN_H,    EN_J,    EN_K,    EN_L,     AG_SCLN,  EN_AT,
+           LA_CHNG,       KC_TAB,  EN_Q,    EN_W,    EN_E,    EN_R,      EN_T,                                         EN_Y,    EN_U,    EN_I,    EN_O,     EN_P,     EN_GRV,  AG_SLSH,
+                          AWSM_T,  EN_A,    EN_S,    EN_D,    EN_F,      EN_G,                                         EN_H,    EN_J,    EN_K,    EN_L,     AG_SCLN,  EN_AT,  
                           KC_LALT, EN_Z,    EN_X,    EN_C,    EN_V,      EN_B,                                         EN_N,    EN_M,    AG_EQL,  AG_UNDS,  AG_DOT,   AG_COMM,
                                                               SFT_N,     KC_SPC, KC_LCTL,                   NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
   ),
@@ -140,82 +134,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   static uint16_t my_hash_timer;
   switch (keycode) {
-    case SFTO:
-      if(record->event.pressed) {
-        my_hash_timer = timer_read();
-        press_arbitrary_keycode(SFT_N, true);
-      } else {
-        press_arbitrary_keycode(SFT_N, false);
-        if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
-          /* shift_once_use_to_next_key(lang_get_shift_layer_number()); */
-          press_arbitrary_keycode(SFT_N_O, true);
-          press_arbitrary_keycode(SFT_N_O, false);
-        }
-      }
-      return false; 
-
-    case SFT_BSP:
-      if(record->event.pressed) {
-        my_hash_timer = timer_read();
-        press_arbitrary_keycode(SFT_N, true);
-      } else {
-        press_arbitrary_keycode(SFT_N, false);
-        if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
-          register_code(KC_BSPC);
-          unregister_code(KC_BSPC);
-        }
-      }
-      return false; 
-
-    case SFT_TAB:
-      if(record->event.pressed) {
-        my_hash_timer = timer_read();
-        press_arbitrary_keycode(SFT_N, true);
-      } else {
-        press_arbitrary_keycode(SFT_N, false);
-        if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
-          register_code(KC_TAB);
-          unregister_code(KC_TAB);
-        }
-      }
-      return false; 
-
-    case ENRU_SFO:
-      if(record->event.pressed) {
-        my_hash_timer = timer_read();
-        press_arbitrary_keycode(ENRU, true);
-      } else {
-        press_arbitrary_keycode(ENRU, false);
-        if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
-          shift_once_use_to_next_key(lang_get_shift_layer_number());
-        }
-      }
-      return false;
-
-    case RUEN_SFO:
-      if(record->event.pressed) {
-        my_hash_timer = timer_read();
-        press_arbitrary_keycode(RUEN, true);
-      } else {
-        press_arbitrary_keycode(RUEN, false);
-        if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
-          shift_once_use_to_next_key(lang_get_shift_layer_number());
-        }
-      }
-      return false; 
-
-    case UAEN_SFO:
-      if(record->event.pressed) {
-        my_hash_timer = timer_read();
-        press_arbitrary_keycode(UAEN, true);
-      } else {
-        press_arbitrary_keycode(UAEN, false);
-        if (timer_elapsed(my_hash_timer) < TAPPING_TERM) {
-          shift_once_use_to_next_key(lang_get_shift_layer_number());
-        }
-      }
-      return false; 
-
     case ENRU_BSP:
       if(record->event.pressed) {
         my_hash_timer = timer_read();
