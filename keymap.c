@@ -50,17 +50,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_EN] = LAYOUT(
                           KC_ESC,  EN_QUOT, AG_DQUO, EN_HASH, EN_DLR,    AG_PERC,                                      AG_COLN, EN_AMPR, AG_ASTR, AG_MINS,  AG_PLUS,  AG_QUES,
-           LA_CHNG,       KC_TAB,  EN_Q,    EN_W,    EN_E,    EN_R,      EN_T,                                         EN_Y,    EN_U,    EN_I,    EN_O,     EN_P,     EN_GRV,  AG_SLSH,
-                          AWSM_T,  EN_A,    EN_S,    EN_D,    EN_F,      EN_G,                                         EN_H,    EN_J,    EN_K,    EN_L,     AG_SCLN,  EN_AT,  
-                          KC_LALT, EN_Z,    EN_X,    EN_C,    EN_V,      EN_B,                                         EN_N,    EN_M,    AG_EQL,  AG_UNDS,  AG_DOT,   AG_COMM,
+           LA_CHNG,       KC_TAB,  EN_Q,    EN_W,    EN_F,    EN_P,      EN_B,                                         EN_J,    EN_L,    EN_U,    EN_Y,     AG_SCLN,  EN_GRV,  AG_SLSH,
+                          AWSM_T,  EN_A,    EN_R,    EN_S,    EN_T,      EN_G,                                         EN_M,    EN_N,    EN_E,    EN_I,     EN_O,     EN_AT,  
+                          KC_LALT, EN_Z,    EN_X,    EN_C,    EN_D,      EN_V,                                         EN_K,    EN_H,    AG_EQL,  AG_UNDS,  AG_DOT,   AG_COMM,
                                                               SFT_N,     KC_SPC, KC_LCTL,                   NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
   ),
 
   [L_EN_S] = LAYOUT(
                           EN_TILD, EN_1,    EN_2 ,   EN_3,    EN_4,      EN_5,                                         EN_6,    EN_7,    EN_8,    EN_9,     EN_0,     EN_PIPE,
-           LA_CHNG,       KC_TAB,  EN_S_Q,  EN_S_W,  EN_S_E,  EN_S_R,    EN_S_T,                                       EN_S_Y,  EN_S_U,  EN_S_I,  EN_S_O,   EN_S_P,   _______,  AG_BSLS,
-                          KC_LGUI, EN_S_A,  EN_S_S,  EN_S_D,  EN_S_F,    EN_S_G,                                       EN_S_H,  EN_S_J,  EN_S_K,  EN_S_L,   _______,  _______,
-                          KC_LALT, EN_S_Z,  EN_S_X,  EN_S_C,  EN_S_V,    EN_S_B,                                       EN_S_N,  EN_S_M,  _______,  _______, AG_EXCL,  EN_CIRC,
+           LA_CHNG,       KC_TAB,  EN_S_Q,  EN_S_W,  EN_S_F,  EN_S_P,    EN_S_B,                                       EN_S_J,  EN_S_L,  EN_S_U,  EN_S_Y,   _______,  _______,  AG_BSLS,
+                          KC_LGUI, EN_S_A,  EN_S_R,  EN_S_D,  EN_S_T,    EN_S_G,                                       EN_S_M,  EN_S_N,  EN_S_E,  EN_S_I,   EN_S_O,   _______,
+                          KC_LALT, EN_S_Z,  EN_S_X,  EN_S_C,  EN_S_D,    EN_S_V,                                       EN_S_K,  EN_S_H,  _______,  _______, AG_EXCL,  EN_CIRC,
                                                               _______,   KC_SPC, KC_LCTL,                   NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
   ),
 
