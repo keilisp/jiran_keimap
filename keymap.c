@@ -130,9 +130,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_EN_S] = LAYOUT(
                           EN_TILD, EN_1,    EN_2 ,   EN_3,    EN_4,      EN_5,                                         EN_6,    EN_7,    EN_8,    EN_9,     EN_0,     EN_PIPE,
-           LA_CHNG,       KC_TAB,  EN_S_Q,  EN_S_W,  EN_S_E,  EN_S_R,    EN_S_T,                                       EN_S_Y,  EN_S_U,  EN_S_I,  EN_S_O,   EN_S_P,   _______,  AG_BSLS,
-                          KC_LGUI, EN_S_A,  EN_S_S,  EN_S_D,  EN_S_F,    EN_S_G,                                       EN_S_H,  EN_S_J,  EN_S_K,  EN_S_L,   _______,  _______,
-                          KC_LALT, EN_S_Z,  EN_S_X,  EN_S_C,  EN_S_V,    EN_S_B,                                       EN_S_N,  EN_S_M,  _______,  _______, AG_EXCL,  EN_CIRC,
+           LA_CHNG,       KC_TAB,  EN_S_Q,  EN_S_W,  EN_S_F,  EN_S_P,    EN_S_B,                                       EN_S_J,  EN_S_L,  EN_S_U,  EN_S_Y,   _______,  _______,  AG_BSLS,
+                          KC_LGUI, EN_S_A,  EN_S_R,  EN_S_D,  EN_S_T,    EN_S_G,                                       EN_S_M,  EN_S_N,  EN_S_E,  EN_S_I,   EN_S_O,   _______,
+                          KC_LALT, EN_S_Z,  EN_S_X,  EN_S_C,  EN_S_D,    EN_S_V,                                       EN_S_K,  EN_S_H,  _______,  _______, AG_EXCL,  EN_CIRC,
                                                               _______,   KC_SPC, KC_LCTL,                   NUKE_ENT,  ENRU_BSP,MO(L_OTHER)
   ),
 
