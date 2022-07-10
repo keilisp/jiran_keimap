@@ -30,6 +30,10 @@ enum LANG_CHANGE {
 
 #define AWSM_T LM(L_AWSM, MOD_LGUI)
 #define CTL_TAB LCTL_T(KC_TAB)
+#define CTL_LEFT LCTL(KC_LEFT)
+#define CTL_RGHT LCTL(KC_RIGHT)
+#define CTL_UP LCTL(KC_UP)
+#define CTL_DOWN LCTL(KC_DOWN)
 #define NUKE_ENT LT(L_NUKE_WAR, KC_ENT)
 
 #define ENRU TL_EN_RU
@@ -224,9 +228,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_OTHER] = LAYOUT(
                           KC_F1,         KC_F2,     KC_F3,    KC_F4,     KC_F5,   KC_F6,                               KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11, KC_F12,
-           LA_SYNC,       KC_PSCR,       EN_CJSLB,  EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  UA_JI,  UA_S_JI,     KC_DEL,
-                          KC_LGUI,       EN_CJLB,   EN_LT,    AG_LPRN,   AG_RPRN, EN_GT,                               KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, UA_JE,  UA_S_JE,
-                          KC_LALT,       EN_CLLB,   EN_GTEQ,  EN_LBRC,   EN_RBRC, EN_ARR1,                             UA_S_I,  UA_I,    UA_GE,   UA_S_GE,   RU_JO,  RU_S_JO,
+           LA_SYNC,       KC_PSCR,       EN_CJSLB,  EN_LTEQ,  EN_LCBR,   EN_RCBR, EN_ARR2,                             KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_NO,  KC_NO,       KC_DEL,
+                          KC_LGUI,       EN_CJST,   EN_LT,    AG_LPRN,   AG_RPRN, EN_GT,                               KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,  KC_NO,
+                          KC_LALT,       EN_CJIF,   EN_GTEQ,  EN_LBRC,   EN_RBRC, EN_ARR1,                             CTL_LEFT,CTL_DOWN,CTL_UP,  CTL_RGHT,KC_NO,  KC_NO,
                                                                          KC_LSFT, KC_SPC, KC_LCTL,          RESET,     KC_BSPC, KC_NO
   ),
 

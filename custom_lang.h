@@ -13,9 +13,11 @@ enum custom_lang_keycodes {
     EN_ARR2,  // =>
     EN_FISH,  // ::<>()◀️◀️◀️
     EN_MACR,  // #[]◀️
-    EN_CLLB,  // (lambda ())◀◀◀◀◀
-    EN_CJLB,  // (fn [] ())◀◀◀◀◀
-    EN_CJSLB,  // #()◀◀
+    EN_CLLB,  // (lambda ())◀◀
+    EN_CJLB,  // (fn [] ())◀◀
+    EN_CJSLB,  // #()◀
+    EN_CJST,  // #{}◀
+    EN_CJIF,  // #_
     EN_CLTG,  // </
     AG2COLN,  // ::
     AG2SLSH,  // //⎵
@@ -159,6 +161,23 @@ bool process_my_lang_keys(uint16_t keycode, keyrecord_t *record) {
                 lang_shift_tap_key(EN_RPRN);
                 register_code(KC_LEFT);
                 unregister_code(KC_LEFT);
+            }
+            return false;
+            break;
+        case EN_CJST:
+            if (record->event.pressed) {
+                lang_shift_tap_key(EN_HASH);
+                lang_shift_tap_key(EN_LCBR);
+                lang_shift_tap_key(EN_RCBR);
+                register_code(KC_LEFT);
+                unregister_code(KC_LEFT);
+            }
+            return false;
+            break;
+        case EN_CJIF:
+            if (record->event.pressed) {
+                lang_shift_tap_key(EN_HASH);
+                lang_shift_tap_key(EN_UNDS);
             }
             return false;
             break;
