@@ -55,103 +55,108 @@ enum {
  TD_RE_UJE,
  TD_RE_UJE_S,
  
- TD_RZH_UJI,
- TD_RZH_UJI_S,
+ TD_RH_UJI,
+ TD_RH_UJI_S,
 };
 
 void dance_ry_ui_f (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_Y, true);
+    register_code(KC_S); 
   } else {
-    press_arbitrary_keycode(UA_I, true);
+    lang_activate(2); 
+    register_code(KC_S); 
   }
 }
 void dance_ry_ui_r (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_Y, false);
+    unregister_code(KC_S);
   } else {
-    press_arbitrary_keycode(UA_I, false);
+    unregister_code(KC_S); 
+    lang_activate(1);
   }
 }
 void dance_ry_ui_S_f (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_S_Y, true);
+    register_code(KC_S); 
   } else {
-    press_arbitrary_keycode(UA_S_I, true);
+    lang_activate(2); 
+    register_code(KC_S);  
   }
 }
 void dance_ry_ui_S_r (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_S_Y, false);
+    unregister_code(KC_S); 
   } else {
-    press_arbitrary_keycode(UA_S_I, false);
+    unregister_code(KC_S); 
+    lang_activate(1);
   }
 }
 
 
 void dance_re_uje_f (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_E, true);
+    register_code(KC_QUOT); 
   } else {
-    press_arbitrary_keycode(UA_JE, true);
+    lang_activate(2); 
+    register_code(KC_QUOT); 
   }
 }
 void dance_re_uje_r (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_E, false);
+    unregister_code(KC_QUOT);
   } else {
-    press_arbitrary_keycode(UA_JE, false);
+    unregister_code(KC_QUOT); 
+    lang_activate(1);
   }
 }
 void dance_re_uje_S_f (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_S_E, true);
+    register_code(KC_QUOT); 
   } else {
-    press_arbitrary_keycode(UA_S_JE, true);
+    lang_activate(2); 
+    register_code(KC_QUOT);  
   }
 }
 void dance_re_uje_S_r (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    press_arbitrary_keycode(RU_S_E, false);
+    unregister_code(KC_QUOT); 
   } else {
-    press_arbitrary_keycode(UA_S_JE, false);
+    unregister_code(KC_QUOT); 
+    lang_activate(1);
   }
 }
 
 
-void dance_rzh_uji_f (qk_tap_dance_state_t *state, void *user_data) {
+void dance_rh_uji_f (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    // HACK, TODO investigate, arbitrary_keycode don't unregister
-    // and starts printing ххххххххххххх
     register_code(KC_LBRC); 
   } else {
-    press_arbitrary_keycode(UA_JI, true);
+    lang_activate(2); 
+    register_code(KC_RBRC); 
   }
 }
-void dance_rzh_uji_r (qk_tap_dance_state_t *state, void *user_data) {
+void dance_rh_uji_r (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    // HACK
     unregister_code(KC_LBRC);
   } else {
-    press_arbitrary_keycode(UA_JI, false);
+    unregister_code(KC_RBRC); 
+    lang_activate(1);
   }
 }
-void dance_rzh_uji_S_f (qk_tap_dance_state_t *state, void *user_data) {
+void dance_rh_uji_S_f (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    // HACK
-    register_code (KC_RSFT);
     register_code(KC_LBRC); 
   } else {
-    press_arbitrary_keycode(UA_S_JI, true);
+    lang_activate(2); 
+    register_code(KC_RBRC);  
   }
 }
-void dance_rzh_uji_S_r (qk_tap_dance_state_t *state, void *user_data) {
+void dance_rh_uji_S_r (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
-    // HACK
-    unregister_code (KC_RSFT);
     unregister_code(KC_LBRC); 
   } else {
-    press_arbitrary_keycode(UA_S_JI, false);
+    unregister_code(KC_RBRC); 
+    lang_activate(1);
   }
 }
 
@@ -162,8 +167,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_RE_UJE] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_re_uje_f, dance_re_uje_r),
   [TD_RE_UJE_S] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_re_uje_S_f, dance_re_uje_S_r),
 
-  [TD_RZH_UJI] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_rzh_uji_f, dance_rzh_uji_r),
-  [TD_RZH_UJI_S] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_rzh_uji_S_f, dance_rzh_uji_S_r)
+  [TD_RH_UJI] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_rh_uji_f, dance_rh_uji_r),
+  [TD_RH_UJI_S] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_rh_uji_S_f, dance_rh_uji_S_r)
 };
 
 #define RY_UI TD(TD_RY_UI)
@@ -172,8 +177,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define RE_UJE TD(TD_RE_UJE)
 #define RE_UJE_S TD(TD_RE_UJE_S)
 
-#define RZH_UJI TD(TD_RZH_UJI)
-#define RZH_UJI_S TD(TD_RZH_UJI_S)
+#define RH_UJI TD(TD_RH_UJI)
+#define RH_UJI_S TD(TD_RH_UJI_S)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -196,7 +201,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_RU] = LAYOUT(
                           KC_ESC,  EN_QUOT, AG_DQUO, RU_NUME, EN_DLR,  AG_PERC,                                        AG_COLN, EN_AMPR, AG_ASTR, AG_MINS,  AG_PLUS,  AG_QUES,
-           LA_CHNG,       KC_TAB,  RU_J,    RU_TS,   RU_U,    RU_K,    RU_JE,                                          RU_N,    RU_G,    RU_SH,   RU_SC,    RU_Z,     RZH_UJI,   AG_SLSH,
+           LA_CHNG,       KC_TAB,  RU_J,    RU_TS,   RU_U,    RU_K,    RU_JE,                                          RU_N,    RU_G,    RU_SH,   RU_SC,    RU_Z,     RH_UJI,   AG_SLSH,
                           AWSM_T,  RU_F,    RY_UI,   RU_V,    RU_A,    RU_P,                                           RU_R,    RU_O,    RU_L,    RU_D,     RU_ZH,    RE_UJE,
                           KC_LALT, RU_JA,   RU_CH,   RU_S,    RU_M,    RU_I,                                           RU_T,    RU_SF,   RU_B,    RU_JU,    AG_DOT,   AG_COMM,
                                                               SFT_N,   KC_SPC,   KC_LCTL,                   NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
@@ -204,7 +209,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   
   [L_RU_S] = LAYOUT(
                           EN_TILD, RU_1,    RU_2 ,   RU_3,    RU_4,    RU_5,                                           RU_6,    RU_7,    RU_8,    RU_9,     RU_0,     EN_PIPE,
-           LA_CHNG,       KC_TAB,  RU_S_J,  RU_S_TS, RU_S_U,  RU_S_K,  RU_S_JE,                                        RU_S_N,  RU_S_G,  RU_S_SH, RU_S_SC,  RU_S_Z,   RZH_UJI_S, AG_BSLS,
+           LA_CHNG,       KC_TAB,  RU_S_J,  RU_S_TS, RU_S_U,  RU_S_K,  RU_S_JE,                                        RU_S_N,  RU_S_G,  RU_S_SH, RU_S_SC,  RU_S_Z,   RH_UJI_S, AG_BSLS,
                           KC_LGUI, RU_S_F,  RY_UI_S, RU_S_V,  RU_S_A,  RU_S_P,                                         RU_S_R,  RU_S_O,  RU_S_L,  RU_S_D,   RU_S_ZH,  RE_UJE_S,
                           KC_LALT, RU_S_JA, RU_S_CH, RU_S_S,  RU_S_M,  RU_S_I,                                         RU_S_T,  RU_S_SF, RU_S_B,  RU_S_JU,  AG_EXCL,  EN_CIRC,
                                                               _______, KC_SPC,   KC_LCTL,                   NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
