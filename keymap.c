@@ -50,13 +50,8 @@ enum custom_keycodes {
 /* Tap Dance */
 enum {
  TD_RY_UI = 0,
- TD_RY_UI_S,
-
  TD_RE_UJE,
- TD_RE_UJE_S,
- 
  TD_RH_UJI,
- TD_RH_UJI_S,
 };
 
 void dance_ry_ui_f (qk_tap_dance_state_t *state, void *user_data) {
@@ -70,22 +65,6 @@ void dance_ry_ui_f (qk_tap_dance_state_t *state, void *user_data) {
 void dance_ry_ui_r (qk_tap_dance_state_t *state, void *user_data) {
   if (state->count == 1) {
     unregister_code(KC_S);
-  } else {
-    unregister_code(KC_S); 
-    lang_activate(1);
-  }
-}
-void dance_ry_ui_S_f (qk_tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1) {
-    register_code(KC_S); 
-  } else {
-    lang_activate(2); 
-    register_code(KC_S);  
-  }
-}
-void dance_ry_ui_S_r (qk_tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1) {
-    unregister_code(KC_S); 
   } else {
     unregister_code(KC_S); 
     lang_activate(1);
@@ -109,22 +88,6 @@ void dance_re_uje_r (qk_tap_dance_state_t *state, void *user_data) {
     lang_activate(1);
   }
 }
-void dance_re_uje_S_f (qk_tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1) {
-    register_code(KC_QUOT); 
-  } else {
-    lang_activate(2); 
-    register_code(KC_QUOT);  
-  }
-}
-void dance_re_uje_S_r (qk_tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1) {
-    unregister_code(KC_QUOT); 
-  } else {
-    unregister_code(KC_QUOT); 
-    lang_activate(1);
-  }
-}
 
 
 void dance_rh_uji_f (qk_tap_dance_state_t *state, void *user_data) {
@@ -143,42 +106,16 @@ void dance_rh_uji_r (qk_tap_dance_state_t *state, void *user_data) {
     lang_activate(1);
   }
 }
-void dance_rh_uji_S_f (qk_tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1) {
-    register_code(KC_LBRC); 
-  } else {
-    lang_activate(2); 
-    register_code(KC_RBRC);  
-  }
-}
-void dance_rh_uji_S_r (qk_tap_dance_state_t *state, void *user_data) {
-  if (state->count == 1) {
-    unregister_code(KC_LBRC); 
-  } else {
-    unregister_code(KC_RBRC); 
-    lang_activate(1);
-  }
-}
 
 qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_RY_UI] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_ry_ui_f, dance_ry_ui_r),
-  [TD_RY_UI_S] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_ry_ui_S_f, dance_ry_ui_S_r),
-
   [TD_RE_UJE] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_re_uje_f, dance_re_uje_r),
-  [TD_RE_UJE_S] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_re_uje_S_f, dance_re_uje_S_r),
-
   [TD_RH_UJI] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_rh_uji_f, dance_rh_uji_r),
-  [TD_RH_UJI_S] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_rh_uji_S_f, dance_rh_uji_S_r)
 };
 
 #define RY_UI TD(TD_RY_UI)
-#define RY_UI_S TD(TD_RY_UI_S)
-
 #define RE_UJE TD(TD_RE_UJE)
-#define RE_UJE_S TD(TD_RE_UJE_S)
-
 #define RH_UJI TD(TD_RH_UJI)
-#define RH_UJI_S TD(TD_RH_UJI_S)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -209,8 +146,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   
   [L_RU_S] = LAYOUT(
                           EN_TILD, RU_1,    RU_2 ,   RU_3,    RU_4,    RU_5,                                           RU_6,    RU_7,    RU_8,    RU_9,     RU_0,     EN_PIPE,
-           LA_CHNG,       KC_TAB,  RU_S_J,  RU_S_TS, RU_S_U,  RU_S_K,  RU_S_JE,                                        RU_S_N,  RU_S_G,  RU_S_SH, RU_S_SC,  RU_S_Z,   RH_UJI_S, AG_BSLS,
-                          KC_LGUI, RU_S_F,  RY_UI_S, RU_S_V,  RU_S_A,  RU_S_P,                                         RU_S_R,  RU_S_O,  RU_S_L,  RU_S_D,   RU_S_ZH,  RE_UJE_S,
+           LA_CHNG,       KC_TAB,  RU_S_J,  RU_S_TS, RU_S_U,  RU_S_K,  RU_S_JE,                                        RU_S_N,  RU_S_G,  RU_S_SH, RU_S_SC,  RU_S_Z,   RH_UJI, AG_BSLS,
+                          KC_LGUI, RU_S_F,  RY_UI,   RU_S_V,  RU_S_A,  RU_S_P,                                         RU_S_R,  RU_S_O,  RU_S_L,  RU_S_D,   RU_S_ZH,  RE_UJE,
                           KC_LALT, RU_S_JA, RU_S_CH, RU_S_S,  RU_S_M,  RU_S_I,                                         RU_S_T,  RU_S_SF, RU_S_B,  RU_S_JU,  AG_EXCL,  EN_CIRC,
                                                               _______, KC_SPC,   KC_LCTL,                   NUKE_ENT,  RUEN_BSP,MO(L_OTHER)
   ),
