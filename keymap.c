@@ -178,9 +178,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [L_NUKE_WAR] = LAYOUT(
                           KC_ESC,         KC_SLCK,   KC_CAPS,  KC_INSERT, KC_PAUSE,KC_PSCR,                            KC_NO,   KC_PSLS, KC_P7,   KC_P8,   KC_P9,  KC_PMNS,
-           KC_MENU,       KC_TAB,         KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                              KC_NO,   KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,     KC_NLCK,
-                          KC_RGUI,        KC_NO,     KC_NO,    KC_NO,     KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PENT,
-                          KC_RALT,        KC_LALT,   KC_LSFT,  KC_LGUI,   KC_NO,   KC_NO,                              KC_NO,   KC_NO,   KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
+           KC_MENU,       KC_TAB,         _______,   _______,  _______,   _______,   _______,                          _______, KC_PAST, KC_P4,   KC_P5,   KC_P6,  KC_PPLS,     KC_NLCK,
+                          KC_RGUI,        _______,   _______,  _______,   _______,   _______,                          _______, _______, KC_P1,   KC_P2,   KC_P3,  KC_PENT,
+                          KC_RALT,        KC_LALT,   KC_LSFT,  KC_LGUI,   _______,   _______,                          _______, _______, KC_P0,   KC_PDOT, KC_PCMM,KC_PEQL,
                                                                           KC_RSFT, KC_SPC, KC_RCTL,         KC_NO,     KC_BSPC, MO(L_OTHER)
   ),
 
